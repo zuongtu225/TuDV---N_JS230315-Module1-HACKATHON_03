@@ -40,7 +40,7 @@ add.addEventListener("click", () => {
 });
 
 //render
-render(listLocal);
+
 function render(data: User[]) {
   const mid = document.querySelector(".mid-container") as HTMLElement;
   let content = "";
@@ -49,7 +49,7 @@ function render(data: User[]) {
     <div class="mid">
     <div class="mid-left">
       <i class="bx bx-x" onclick ="deletePlayer(${player.id})"></i>
-      <i class="bx bx-crown"></i>
+      <i class="bx bx-crown" id="${player.id}"></i>
       <p>${player.name}</p>
     </div>
     <div class="mid-right">
@@ -60,6 +60,19 @@ function render(data: User[]) {
   </div>`;
   });
   mid.innerHTML = content;
+  const maxPoint = Math.max(...listLocal.map((item: User) => item.point));
+
+  const maxPointsArray = listLocal.filter(
+    (item: User) => item.point === maxPoint
+  );
+  for (let i = 0; i < maxPointsArray.length; i++) {
+    const nameElement = document.getElementById(
+      `${maxPointsArray[i].id}`
+    ) as HTMLParagraphElement;
+
+    nameElement.style.color = "yellow";
+  }
+
   // in số lượng người chơi
   const player = document.querySelector("#player") as HTMLElement;
   let length = listLocal.length;
@@ -72,7 +85,6 @@ function render(data: User[]) {
   });
   printPoint.innerHTML = "Point: " + point;
   //render màu nhà vô địch
-  champion(listLocal);
   localStorage.setItem("listPLayers", JSON.stringify(listLocal));
 }
 function handleMinus(id: number) {
@@ -95,22 +107,22 @@ function handlePlus(id: number) {
   });
   render(listLocal);
 }
-function champion(data: User[]) {
-  let max = data[0].point;
-  let maxIndex = 0;
-  data.forEach((player: User, index: number) => {
-    if (player.point > max) {
-      max = player.point;
-      maxIndex = index;
-    }
-  });
-  const crownIcons = document.querySelectorAll(".bx-crown");
-  crownIcons.forEach((crown: any, index) => {
-    if (maxIndex == index) {
-      crown.style.backgroundColor = "yellow";
-    }
-  });
-}
+// function champion(data: User[]) {
+//   let max = data[0].point;
+//   let maxIndex = 0;
+//   data.forEach((player: User, index: number) => {
+//     if (player.point > max) {
+//       max = player.point;
+//       maxIndex = index;
+//     }
+//   });
+//   const crownIcons = document.querySelectorAll(".bx-crown");
+//   crownIcons.forEach((crown: any, index) => {
+//     if (maxIndex == index) {
+//       crown.style.backgroundColor = "yellow";
+//     }
+//   });
+// }
 
 function deletePlayer(id: number) {
   listLocal.forEach((player: User, index: number) => {
@@ -142,3 +154,4 @@ function nonePLayer() {
     nonePLayers.innerHTML = "Hiện chưa có người chơi nào !";
   }
 }
+render(listLocal);
