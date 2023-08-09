@@ -54,7 +54,7 @@ h1 {
   cursor: pointer;
 }
 #listNote {
-  gap: 10px;
+  gap: 15px;
   width: 100%;
   display: grid;
   grid-template-columns: repeat(4, 1fr);

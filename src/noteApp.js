@@ -45,10 +45,8 @@ function renderNote(data) {
 }
 renderNote(listNoteLocal);
 function handleDelete(id) {
-    const idNote = listNoteLocal.find((note) => note.id === id);
-    console.log(idNote);
     listNoteLocal.forEach((note, index) => {
-        if (idNote.id === note.id) {
+        if (note.id == id) {
             listNoteLocal.splice(index, 1);
         }
     });
