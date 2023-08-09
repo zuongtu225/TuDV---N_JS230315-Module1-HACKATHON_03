@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="scoreboard.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="top">
+        <div class="quantity">
+          <p id="player"></p>
+          <p id="point-top"></p>
+        </div>
+        <div class="title"><h1>Rikkei Score Band</h1></div>
+      </div>
+      <div class="mid-container"></div>
+      <div class="bottom">
+        <input
+          id="name-player"
+          type="text"
+          placeholder="Enter a player's name"
+        />
+        <button id="add">ADD PLAYER</button>
+      </div>
+    </div>
+    <p id="noPlayer"></p>
+    <script src="./src/scoreboard.js"></script>
+  </body>
+</html>
