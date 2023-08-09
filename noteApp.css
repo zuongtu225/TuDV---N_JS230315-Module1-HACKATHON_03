@@ -1,0 +1,91 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 73%;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+.wrapper-note {
+  background-color: #e9e7e7;
+}
+#content-wrapper {
+  padding: 15px;
+}
+h1 {
+  font-family: "Roboto", sans-serif;
+  color: white;
+  padding: 10px;
+  background-color: rgb(0, 118, 14);
+  width: 100%;
+}
+#formAdd {
+  border-radius: 4px;
+  position: relative;
+  height: 120px;
+  width: 400px;
+  background-color: #fff;
+  margin-bottom: 30px;
+}
+#title {
+  border-radius: 4px;
+  outline: none;
+  padding: 10px;
+  border: none;
+  width: 100%;
+  border-bottom: 1px solid rgb(243, 242, 242);
+}
+#content {
+  outline: none;
+  border-radius: 4px;
+  padding: 25px 25px 25px 10px;
+  border: none;
+  width: 100%;
+}
+#addNote {
+  color: rgb(0, 149, 55);
+  font-size: 20px;
+  position: absolute;
+  bottom: 5px;
+  right: 20px;
+  cursor: pointer;
+}
+#listNote {
+  gap: 10px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+#note {
+  padding: 5px;
+  overflow: hidden;
+  border-radius: 4px;
+  position: relative;
+  height: 90px;
+  width: 250px;
+  background-color: #fff;
+  word-wrap: break-word;
+}
+#renderTitle {
+  font-weight: bold;
+  border-bottom: 1px solid rgb(243, 242, 242);
+  color: green;
+}
+#noted {
+  padding-top: 5px;
+  display: block;
+  color: rgb(4, 4, 4);
+}
+
+#delete {
+  cursor: pointer;
+  padding-right: 10px;
+  right: 5px;
+  bottom: 5px;
+  position: absolute;
+  color: red;
+}
